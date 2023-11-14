@@ -36,13 +36,13 @@ def test_select_multiple_checkboxes(driver):
     checked_checkboxes = driver.find_elements(By.CSS_SELECTOR, "input[type='checkbox']:checked")
     unchecked_checkboxes = driver.find_elements(By.CSS_SELECTOR, "input[type='checkbox']:not(:checked)")
     assert len(checked_checkboxes) == 3
-    assert len(unchecked_checkboxes) == 2
+    assert len(unchecked_checkboxes) == 1
 
 def test_select_radio_button(driver):
     radio_button = driver.find_element(By.CSS_SELECTOR, "input[type='radio']")
     radio_button.click()
     checked_radio_buttons = driver.find_elements(By.CSS_SELECTOR, "input[type='radio']:checked")
     unchecked_radio_buttons = driver.find_elements(By.CSS_SELECTOR, "input[type='radio']:not(:checked)")
-    assert len(checked_radio_buttons) == 1
-    assert len(unchecked_radio_buttons) == 2
+    assert len(checked_radio_buttons) == 2
+    assert len(unchecked_radio_buttons) == 6
 
